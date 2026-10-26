@@ -1,6 +1,13 @@
 # 🚀 TaskFlow — Website Quản Lý Công Việc (Task Manager)
 
-> **TaskFlow** là ứng dụng web quản lý công việc hiện đại với kiến trúc tách biệt Frontend & Backend, lưu trữ cơ sở dữ liệu trên cloud và sẵn sàng deploy lên Internet theo kế hoạch 3 ngày.
+> **TaskFlow** là ứng dụng web quản lý công việc hiện đại với kiến trúc tách biệt Frontend & Backend, lưu trữ cơ sở dữ liệu trên cloud và đã được triển khai hoàn chỉnh lên Internet.
+
+### 🌐 Demo Trực Tiếp & Đường Dẫn Triển Khai
+* 🖥️ **Website chính thức (Frontend):** [https://taskflow-prj1.vercel.app/](https://taskflow-prj1.vercel.app/)
+* 🚀 **REST API Server (Backend):** [https://taskflow-backend-bjpp.onrender.com](https://taskflow-backend-bjpp.onrender.com)
+* 📑 **Tài liệu API Swagger:** [https://taskflow-backend-bjpp.onrender.com/docs](https://taskflow-backend-bjpp.onrender.com/docs)
+* 🐘 **Cơ sở dữ liệu:** PostgreSQL Serverless trên [Neon.tech](https://neon.tech) (Singapore)
+* 📦 **Kho lưu trữ GitHub:** [https://github.com/TranChau-arch1/taskflow_prj1](https://github.com/TranChau-arch1/taskflow_prj1)
 
 ---
 
