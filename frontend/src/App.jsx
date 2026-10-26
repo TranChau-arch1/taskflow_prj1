@@ -4,6 +4,7 @@ import TaskStats from "./components/TaskStats";
 import TaskFilters from "./components/TaskFilters";
 import TaskList from "./components/TaskList";
 import TaskModal from "./components/TaskModal";
+import ChatWidget from "./components/ChatWidget";
 import { taskApi } from "./services/taskApi";
 
 export default function App() {
@@ -222,6 +223,14 @@ export default function App() {
         onSubmit={handleSubmitTask}
         initialData={editingTask}
         isSubmitting={isSubmitting}
+      />
+
+      {/* Floating AI Chatbot Widget */}
+      <ChatWidget
+        onTasksChanged={() => {
+          fetchTasks();
+          fetchStatsTasks();
+        }}
       />
 
       <footer className="app-footer">

@@ -85,3 +85,23 @@ export const taskApi = {
     return API_BASE_URL;
   }
 };
+
+export const chatApi = {
+  async sendMessage(message, history = []) {
+    return await request("/api/chat", {
+      method: "POST",
+      body: JSON.stringify({ message, history }),
+    });
+  },
+
+  async getSuggestions() {
+    return await request("/api/chat/suggestions");
+  },
+
+  async batchCreateTasks(tasks) {
+    return await request("/api/chat/batch-create", {
+      method: "POST",
+      body: JSON.stringify(tasks),
+    });
+  }
+};

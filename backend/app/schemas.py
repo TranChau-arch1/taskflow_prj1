@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from typing import Optional, Literal
+from typing import Optional, Literal, List
 from pydantic import BaseModel, Field, ConfigDict
 
 PriorityType = Literal["low", "medium", "high"]
@@ -33,3 +33,25 @@ class HealthResponse(BaseModel):
     status: str
     database: str
     version: str
+
+# Chatbot Schemas
+class ChatMessage(BaseModel):
+    role: Literal["user", "assistant", "system"]
+    content: str
+
+class ChatRequest(BaseModel):
+    message: str = Field(..., min_length=1, description="Tin nhắn từ người dùng")
+    history: Optional[List[ChatMessage]] = Field(default_factory=list, description="Lịch sử trò chuyện gần nhất")
+
+class ChatAction(BaseModel):
+    type: Literal["create_task", "complete_task", "delete_task", "list_tasks", "suggest_tasks", "summary", "none"] = "none"
+    task: Optional[TaskResponse] = None
+    tasks: Optional[List[TaskResponse]] = None
+    suggested_tasks: Optional[List[TaskCreate]] = None
+    summary_data: Optional[dict] = None
+
+class ChatResponse(BaseModel):
+    reply: str
+    action: Optional[ChatAction] = None
+    llm_used: bool = False
+    provider: Optional[str] = None

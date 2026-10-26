@@ -6,7 +6,7 @@ from sqlalchemy import text
 from dotenv import load_dotenv
 
 from app.database import engine, Base, get_db
-from app.routers import tasks
+from app.routers import tasks, chat
 from app.schemas import HealthResponse
 
 load_dotenv()
@@ -37,6 +37,7 @@ app.add_middleware(
 
 # Include Routers
 app.include_router(tasks.router)
+app.include_router(chat.router)
 
 @app.get("/", tags=["Root"])
 def root():
